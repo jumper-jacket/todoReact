@@ -1,5 +1,7 @@
 import React from 'react';
+import './components/ToDoList';
 import './App.css';
+import ToDoList from './components/ToDoList';
 
 function App() {
   return (
@@ -7,6 +9,7 @@ function App() {
       <h1 className="text-4xl font-bold">
         tailwind
       </h1>
+      <ToDoList />
     </div>
   );
 }

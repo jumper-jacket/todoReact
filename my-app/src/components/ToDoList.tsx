@@ -60,7 +60,7 @@ function ToDoList(){
                 {todos.filter(todo => todo.completed===false).map(todo => (
                     <li
                     key={todo.id}
-                    className={`p-2 mb-2 rounded flex justify-between items-center ${todo.completed ? 'bg-green-200' : 'bg-gray-200'}`}
+                    className={`p-2 mb-2 rounded flex justify-between items-center  bg-gray-200`}
                     >
                         <div>
                             <input
@@ -69,10 +69,10 @@ function ToDoList(){
                             onChange={()=> toggleComplete(todo.id)}
                             className='mr-2'
                             />
-                            <span className={todo.completed ? 'line-through' : ''}>
+                            <span className="font-bold">
                                 {todo.text}
                             </span>
-                            <span className="text-sm text-gray-500 ml-2">
+                            <span className="font-bold text-sm text-gray-500 ml-2">
                                 登録日:{todo.registeredTime}
                             </span>
                         </div>
@@ -89,7 +89,7 @@ function ToDoList(){
                 .map(todo => (
                     <li
                     key={todo.id}
-                    className={`p-2 mb-2 rounded flex justify-between items-center ${todo.completed ? 'bg-green-200' : 'bg-gray-200'}`}
+                    className={`p-2 mb-2 rounded flex justify-between items-center bg-green-200`}
                     >
                         <div>
                             <input
@@ -98,10 +98,10 @@ function ToDoList(){
                             onChange={()=> toggleComplete(todo.id)}
                             className='mr-2'
                             />
-                            <span className={todo.completed ? 'line-through' : ''}>
+                            <span className="font-bold">
                                 {todo.text}
                             </span>
-                            <span className="text-sm text-gray-500 ml-2">
+                            <span className="font-bold text-sm text-gray-500 ml-2">
                                 登録日:{todo.registeredTime}
                             </span>
                         </div>

@@ -30,7 +30,7 @@ const TodoInput: React.FC<TodoInputProps> = ({ addTodo }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mb-4">
+        <form onSubmit={handleSubmit} className="mb-4 w-full flex justify-center">
             <input
                 type="text"
                 value={text}
@@ -104,33 +104,43 @@ function ToDoList() {
     };
 
     return (
-        <div className="mx-auto mt-10 rounded-lg">
-            <TodoInput addTodo={addTodo} />
+    <div>
+            <div className='flex'>
+                <TodoInput addTodo={addTodo} />
+            </div>
+
+    <div className='flex justify-around'>
+        <div className='flex-grow'>
             <h1 className="text-3xl font-bold">Todo List</h1>
-            <ul>
-                {todos.filter(todo => !todo.completed).map(todo=> (
-                    <TodoItem
-                    key={todo.id}
-                    todo={todo}
-                    toggleComplete={toggleComplete}
-                    deleteTodo={deleteTodo}
-                    bgColor='bg-gray-200'
-                     />
-                ))}
-            </ul>
-           <h1 className="text-3xl font-bold">Completed</h1>
-           <ul>
-            {todos.filter(todo => todo.completed).map(todo => (
-                <TodoItem
-                    key={todo.id}
-                    todo={todo}
-                    toggleComplete={toggleComplete}
-                    deleteTodo={deleteTodo}
-                    bgColor='bg-green-200'
-                />
-            ))}
-           </ul>
+                <ul>
+                    {todos.filter(todo => !todo.completed).map(todo=> (
+                        <TodoItem
+                        key={todo.id}
+                        todo={todo}
+                        toggleComplete={toggleComplete}
+                        deleteTodo={deleteTodo}
+                        bgColor='bg-gray-200'
+                        />
+                    ))}
+                </ul>
+            </div>
+
+            <div className='flex-grow'>
+                <h1 className="text-3xl font-bold">Completed</h1>
+                <ul>
+                    {todos.filter(todo => todo.completed).map(todo => (
+                        <TodoItem
+                            key={todo.id}
+                            todo={todo}
+                            toggleComplete={toggleComplete}
+                            deleteTodo={deleteTodo}
+                            bgColor='bg-green-200'
+                        />
+                    ))}
+                </ul>
+            </div>
         </div>
+    </div>
     );
 }
 
